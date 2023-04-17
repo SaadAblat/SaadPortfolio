@@ -1,0 +1,364 @@
+﻿@page "/"
+@inject IJSRuntime javaScript;
+<nav>
+
+    <div class="navMenu @navCssClass">
+        <div id="halfLeft">
+            <div>Saad.dev </div>
+        </div>
+
+        <div id="halfRight">
+
+            <a @onclick="(async() => await Activate(NavNames.About))" class="@AboutClass navItem"><div>About </div></a>
+            <a @onclick="(async() => await Activate(NavNames.Skills))" class="@SkillsClass navItem"><div>Skills</div></a>
+            <a @onclick="(async() => await Activate(NavNames.Projects))" class="@ProjectClass navItem"><div>Projects</div></a>
+            <a @onclick="(async() => await Activate(NavNames.Contact))" class="@ContactClass navItem"><div>Contact</div> </a>
+        </div>
+    </div>
+    <a class="menu-icon" @onclick="toggleMenu">
+        <i class="@iconClass"></i>
+    </a>
+</nav>
+
+<div id="About">
+    <div class="about-row1">
+        <div class="image-and-links">
+            <img src="/pictures/profilePicture/me.jpg" class="picture-container" />
+            <div class="links">
+                <a class="contact-link" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
+                <a class="contact-link" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
+            </div>
+        </div>
+
+        <div class="about-container">
+
+            <div id="welcomeMessage">
+                C# software enginer
+            </div>
+
+            <div id="description">
+                <div>
+                    Hi, I'm Saad, I live in Morocco and I create full-stack applications with .Net and C#. I love the process of learning! I also enjoy
+                    working out, going for long
+                    walks and listening to podcasts.
+                </div>
+            </div>
+            <div class="buttons-about">
+                <a href="/SaadBio" target="_blank" class="button-link">Read my bio</a>
+                <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.jpg" class="button-link">Download my resume</a>
+            </div>
+
+
+
+
+        </div>
+
+        <div class="logos">
+            <div id="tech-stack">Tech stack:</div>
+            <img class="logo" src="/Pictures/Icons/cs.png" />
+
+            <img class="logo" src="/Pictures/Icons/dotnet.png" />
+            <img class="logo" src="/Pictures/Icons/asp.net.png" />
+            <img class="logo" src="/Pictures/Icons/Blazor.png" />
+            <img class="logo" src="/Pictures/Icons/sql.png" />
+            <img class="logo" src="/Pictures/Icons/git.png" />
+            <img class="logo" src="/Pictures/Icons/css.png" />
+            <img class="logo" src="/Pictures/Icons/html5.png" />
+            <img class="logo" src="/Pictures/Icons/javascript.png" />
+            <img class="logo" src="/Pictures/Icons/unity.png" />
+
+        </div>
+    </div>
+
+
+
+
+</div>
+<div id="Skills" class="section-container">
+    <div class="section-title">SKILLS</div>
+    <div class="container-2 ">
+
+        <div class="skills-description-container">
+            <div class="skills-description-title">Full Stack development</div>
+            <div class="skills-container">
+                <div class="skill"><div>C#</div></div>
+                <div class="skill"><div>.NET Core</div></div>
+                <div class="skill"><div>Asp.net Core</div></div>
+                <div class="skill"><div>Blazor</div></div>
+                <div class="skill"><div>SQL</div></div>
+                <div class="skill"><div>Entity Framework Core</div></div>
+                <div class="skill"><div>Dapper</div></div>
+                <div class="skill"><div>API</div></div>
+                <div class="skill"><div>Git</div></div>
+                <div class="skill"><div>html5</div></div>
+                <div class="skill"><div>css3</div></div>
+                <div class="skill"><div>javascript</div></div>
+                <div class="skill"><div>Bootsrap</div></div>
+            </div>
+            <div class="skills-description">
+                I'm proficient in <b>C#</b> and
+                <b>.NET Core</b>, including <b>windows forms</b>, <b>Asp.net Core</b>,
+                and <b>Blazor</b>.
+                I build powerful and scalable full-stack desktop and web applications,
+                and have experience creating <b>RESTful</b> and <b>Minimal</b> <b>APIs</b>.
+                For data access I have experience with <b>SQL</b>, <b>Entity Framework Core</b>,
+                and <b>dapper</b> for robust database design and efficient data retrieval/manipulation.
+                Additionally, I'm experienced in <b>HTML5</b>, <b>CSS3</b>, <b>JavaScript</b>, and
+                <b>Bootstrap</b> for creating visually appealing and responsive web pages and applications.
+
+
+
+
+
+
+            </div>
+        </div>
+        <div class="skills-description-container">
+
+            <div class="skills-description-title">Game development</div>
+            <div class="skills-container">
+                <div class="skill"><div>C#</div></div>
+                <div class="skill"><div>Unity</div></div>
+                <div class="skill"><div>Blender</div></div>
+                <div class="skill"><div>Photoshop</div></div>
+                <div class="skill"><div>Aseprite</div></div>
+                <div class="skill"><div>Audacity</div></div>
+
+            </div>
+            <div class="skills-description">
+                I've spent 2+ years creating
+                games in <b>Unity</b>, and I developed skills
+                in writing clean code and building
+                efficient editor tools. I can handle
+                all sort of tasks like asset import,
+                animation, collisions/triggers, game physics,
+                UI design, sound effects, and data saving,
+                as well as using <b>Blender</b> for 3D models and
+                <b>Photoshop</b>/<b>aseprite</b> for sprites and textures.
+                I'm confident I can handle anything a
+                game dev team needs.
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<div id="Projects" class="section-container">
+    <div class="section-title">PROJECTS</div>
+
+    <div class="projects-container">
+        <div class="project-container">
+            <div class="project-picture-container">
+                <img src="/Pictures/Projects/TournamentTracker/TournamentTrackerApplication.png" class="project-picture" />
+            </div>
+            <div class="project-text-container">
+                <div class="project-title">Tournament tracker application</div>
+                <div class="project-description">
+                    A <b>C#</b> and <b>Windows Forms</b> application that automates the creation of tournaments.
+                    It generates matchups and rounds based on the number of participating teams and
+                    has an <b>email</b> notification system to inform participants of important tournament events.
+                    The application is <b>highly scalable</b> and can be integrated with both <b>SQL</b> and <b>text databases</b>  .
+                </div>
+                <div class="logos">
+                    <img class="logo" src="/Pictures/Icons/cs.png" />
+                    <img class="logo" src="/Pictures/Icons/dotnet.png" />
+                    <img class="logo" src="/Pictures/Icons/sql.png" />
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SaadAblat/TournamentTracker" target="_blank" class="project-repository link"><i class="fab fa-github"></i> Project code </a>
+                    <div class="project-link link"><i class="fa-solid fa-download "></i> Download project</div>
+                </div>
+            </div>
+        </div>
+        <div class="project-container column-reverse">
+            <div class="project-text-container project-text-container-small">
+                <div class="project-title">Workout tracker website</div>
+                <div class="project-description">
+                    This is a <b>full-stack</b> workout tracker web app that allows users to create an account,
+                    and add details about their workouts. Users can track their progress with charts
+                    and tables and connect with friends to stay motivated.
+                    I created this project using <b>blazor server</b> with
+                    <b>entity framework core</b> and <b>sql database</b>, I also used <b>Asp.net core identity</b>
+                    for users management.
+
+                </div>
+                <div class="logos">
+                    <img class="logo" src="/Pictures/Icons/cs.png" />
+                    <img class="logo" src="/Pictures/Icons/dotnet.png" />
+                    <img class="logo" src="/Pictures/Icons/sql.png" />
+                    <img class="logo" src="/Pictures/Icons/Blazor.png" />
+                    <img class="logo" src="/Pictures/Icons/Bootstrap_logo.svg.png" />
+
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="project-repository link"><i class="fab fa-github"></i> Project code </a>
+                    <div class="project-link link"><i class="fa-solid fa-download "></i> Download project</div>
+                </div>
+            </div>
+            <div class="project-picture-container wide-picture">
+                <img src="/Pictures/Projects/WorkoutTracker/Home Page.png" class="project-picture" />
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<div id="Contact" class="section-container">
+    <div class="section-title">CONTACT</div>
+    <div class="contact-me">Contact me  👇 : </div>
+    <div class="contacts">
+        <div class="contact-container">
+            <a href="mailto:saad.ablat@gmail.com" class="contact-icon"><i class="fa-solid fa-envelope-open-text"></i></a>
+            <div class="contact-text-container">
+                <div class="email-label">Email</div>
+                <a href="mailto:saad.ablat@gmail.com" class="email">saad.ablat@gmail.com</a>
+            </div>
+        </div>
+        <div class="contact-container">
+            <a href="" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+            <div class="contact-text-container">
+                <div class="email-label">Linkedin</div>
+                <a href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank" class="email">linkedin.com/in/saad-ablat-82237816b</a>
+            </div>
+        </div>
+        <div class="contact-container">
+            <a href="" class="contact-icon"><i class="fab fa-github"></i></a>
+            <div class="contact-text-container">
+                <div class="email-label">Github</div>
+                <a href="https://github.com/SaadAblat" target="_blank" class="email">github.com/SaadAblat</a>
+            </div>
+        </div>
+
+    </div>
+
+
+</div>
+<div class="footer">
+    <div class="footer-row">
+
+        <p class="footer-text">Copyright © 2023. All rights are reserved</p>
+
+        <div class="footer-links">
+            <a class="footer-link" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
+            <a class="footer-link" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+@code {
+    string AboutClass = "Active";
+    string SkillsClass = "NotActive";
+    string ProjectClass = "NotActive";
+    string ContactClass = "NotActive";
+
+
+
+
+    // This serves as an argument for the methods below;
+    enum NavNames
+    {
+        About,
+        Skills,
+        Projects,
+        Contact
+    }
+    NavNames navName;
+
+    // This method change the value of the navActive based on the navName passed as an argument
+    async Task Activate(NavNames navName)
+    {
+
+        closeMenu();
+
+
+        if (navName == NavNames.About)
+        {
+            AboutClass = "Active";
+
+            SkillsClass = "NotActive";
+            ProjectClass = "NotActive";
+            ContactClass = "NotActive";
+            await javaScript.InvokeVoidAsync("ScrollTo", "About");
+
+        }
+        else if (navName == NavNames.Skills)
+        {
+            SkillsClass = "Active";
+
+            AboutClass = "NotActive";
+            ProjectClass = "NotActive";
+            ContactClass = "NotActive";
+            await javaScript.InvokeVoidAsync("ScrollTo", "Skills");
+
+        }
+        else if (navName == NavNames.Projects)
+        {
+            ProjectClass = "Active";
+
+            SkillsClass = "NotActive";
+            AboutClass = "NotActive";
+            ContactClass = "NotActive";
+
+            await javaScript.InvokeVoidAsync("ScrollTo", "Projects");
+
+        }
+        else if (navName == NavNames.Contact)
+        {
+            ContactClass = "Active";
+
+            SkillsClass = "NotActive";
+            ProjectClass = "NotActive";
+            AboutClass = "NotActive";
+
+            await javaScript.InvokeVoidAsync("ScrollTo", "Contact");
+
+        }
+    }
+
+    string navCssClass = "collapse";
+    bool navMenuExpanded = false;
+    void toggleMenu()
+    {
+
+        if (navMenuExpanded == false)
+        {
+
+            navCssClass = "";
+            iconClass = "fa-solid fa-circle-xmark";
+        }
+        else
+        {
+
+            navCssClass = "collapse";
+            iconClass = "fa-solid fa-bars";
+
+        }
+        navMenuExpanded = !navMenuExpanded;
+    }
+    void closeMenu()
+    {
+        navMenuExpanded = false;
+        navCssClass = "collapse";
+        iconClass = "fa-solid fa-bars";
+    }
+
+    string iconClass = "fa-solid fa-bars";
+
+
+
+
+
+}
+
+@*I learned computer science basics in university,
+                        including C, Python, and Matlab. After graduation,
+                        I mastered C# through game development in Unity.
+                        I then delved deeper into C#, creating different .NET Core projects including
+                        desktop applications, ASP.NET Core, and Blazor.*@
