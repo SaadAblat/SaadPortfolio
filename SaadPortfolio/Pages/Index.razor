@@ -15,15 +15,15 @@
             <a @onclick="(async() => await Activate(NavNames.Contact))" class="@ContactClass navItem"><div>Contact</div> </a>
         </div>
     </div>
-    <a class="menu-icon" @onclick="toggleMenu">
-        <i class="@iconClass"></i>
-    </a>
+    <i @onclick="toggleMenu" class="menu-icon @iconClass  fs-6"></i>
+        
+
 </nav>
 
 <div id="About">
     <div class="about-row1">
         <div class="image-and-links">
-            <img src="/pictures/profilePicture/me.jpg" class="picture-container" />
+            <img src="/pictures/profilePicture/me.png" class="picture-container" />
             <div class="links">
                 <a class="contact-link" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
                 <a class="contact-link" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
@@ -45,7 +45,7 @@
             </div>
             <div class="buttons-about">
                 <a href="/SaadBio" target="_blank" class="button-link">Read my bio</a>
-                <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.jpg" class="button-link">Download my resume</a>
+                <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.png" class="button-link">Download my resume</a>
             </div>
 
 
@@ -337,7 +337,7 @@
         {
 
             navCssClass = "collapse";
-            iconClass = "fa-solid fa-bars";
+            iconClass = "oi oi-menu";
 
         }
         navMenuExpanded = !navMenuExpanded;
@@ -346,10 +346,10 @@
     {
         navMenuExpanded = false;
         navCssClass = "collapse";
-        iconClass = "fa-solid fa-bars";
+        iconClass = "oi oi-menu";
     }
 
-    string iconClass = "fa-solid fa-bars";
+    string iconClass = "oi oi-menu";
 
 
 
