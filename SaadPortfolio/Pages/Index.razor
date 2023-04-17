@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IJSRuntime javaScript;
+@inject NavigationManager NavigationManager;
 <nav>
 
     <div class="navMenu @navCssClass">
@@ -44,7 +45,7 @@
                 </div>
             </div>
             <div class="buttons-about">
-                <a href="/SaadBio/" target="_blank" class="button-link">Read my bio</a>
+                <a @onclick="navigateToBio" target="_blank" class="button-link">Read my bio</a>
                 <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.png" class="button-link">Download my resume</a>
             </div>
 
@@ -351,7 +352,10 @@
 
     string iconClass = "oi oi-menu";
 
-
+    void navigateToBio()
+    {
+        NavigationManager.NavigateTo("/SaadBio", true);
+    }
 
 
 
