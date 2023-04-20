@@ -39,7 +39,7 @@
         flex-direction: column;
         justify-content: center;
         background: white;
-        font-size: 30px;
+        
         cursor: pointer;
         transition: all 0.2s;
     }
@@ -70,7 +70,6 @@
         text-decoration: none;
         color: black;
         border-radius: 3%;
-        font-size: 25px;
         font-weight: 700;
         display: flex;
         flex-direction: column;
@@ -128,7 +127,6 @@
 
     #halfLeft {
         width: 100%;
-        font-size: 22px;
         font-weight: 700;
         display: flex;
         flex-direction: row;
@@ -141,7 +139,6 @@
         text-decoration: none;
         color: black;
         border-radius: 3%;
-        font-size: 22px;
         font-weight: 700;
         height: 100%;
         display: flex;
@@ -202,7 +199,6 @@
 }
 
 .section-title {
-    font-size: 25px;
     font-weight: 800;
     margin-bottom: 60px;
     margin-top: 60px;
@@ -253,26 +249,32 @@
     flex-direction: row-reverse;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 20px;
 }
 
 @media (min-width:1500px) {
     .about-container {
         margin-left: 100px;
     }
+    .about-row1 {
+        gap: 50px;
+    }
 
     #welcomeMessage {
-        font-size: 75px;
         font-weight: 700;
     }
 }
 
 @media(max-width:1500px) {
+    .about-row1 {
+        gap: 0px;
+    }
+
     #welcomeMessage {
-        font-size: 40px;
         font-weight: 700;
         text-align: center;
         width: 100%;
+        margin-bottom: 30px;
     }
 
     .about-container {
@@ -297,7 +299,6 @@
     margin-top: 30px;
 }
 .contact-link{
-    font-size:40px;
 }
 
 .buttons-about {
@@ -332,14 +333,12 @@
 
 .Ft-link {
     text-decoration: none;
-    font-size: 40px;
     color: black;
     cursor: pointer;
     position: relative;
 }
 
 #description {
-    font-size: 22px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -407,7 +406,6 @@
     flex-direction: column;
     justify-content: center;
     border-radius: 5%;
-    font-size: 20px;
     box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
     -webkit-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
     -moz-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
@@ -415,13 +413,11 @@
 
 
 .skills-description-title {
-    font-size: 25px;
     font-weight: 700;
     color: #2d2e32;
 }
 
 .skills-description {
-    font-size: 15px;
 }
 /*Projects*/
 #Projects {
@@ -433,17 +429,16 @@
     flex-direction: column;
     justify-content: center;
     width: 100%;
-    gap: 25px;
+    gap: 15px;
 }
 
 .project-description {
-    font-size: 18px;
     color: #383838;
     margin-bottom: 20px;
+    text-align:start;
 }
 
 .project-title {
-    font-size: 23px;
     margin: 15px;
     font-weight: 700;
     color: #2d2e32;
@@ -452,10 +447,10 @@
 .project-links {
     margin-top: 30px;
     margin-inline: auto;
-    font-size: 20px;
     text-align: start;
     display: flex;
     flex-direction: row;
+    flex-wrap:wrap;
     justify-content: center;
     gap: 30px;
 }
@@ -478,13 +473,13 @@
         box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.1);
         -webkit-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.1);
         -moz-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.1);
-        padding: 60px;
+        padding: 30px;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
-        gap: 50px;
+        gap: 25px;
         margin: auto;
         min-height: 400px;
     }
@@ -512,7 +507,8 @@
 
 
     .project-picture-container {
-        width: 30%;
+        width: 700px;
+        text-align: center;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -522,6 +518,7 @@
     .project-picture {
         max-height: 400px;
         object-fit: contain;
+        
         border-radius: 3%;
         border: 1px solid #e6e6e6;
         box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.1);
@@ -534,7 +531,6 @@
 
     .project-container {
         border: 1px solid #a8a8a8;
-        border-radius: 4% / 2%;
         box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
         -webkit-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
         -moz-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.21);
@@ -559,7 +555,6 @@
     }
 
     .project-title {
-        font-size: 22px;
         font-weight: 600;
     }
 
@@ -570,18 +565,25 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        width: 80vw;
+        height: 400px;
+        text-align: center;
     }
 
 
     .project-picture {
-        width: 100%;
-        border: solid 1px #c2c2c2;
+        max-width: 80vw;
+        max-height: 400px;
+        object-fit: contain;
         border-radius: 3%;
+        box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.1);
+        -webkit-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.10);
+        -moz-box-shadow: 1px 0px 29px 0px rgba(0,0,0,0.10);
     }
+
 }
 
 #tech-stack {
-    font-size: 20px;
     font-weight: 600;
     margin: 40px;
 }
@@ -595,6 +597,7 @@
     width: 90px;
     aspect-ratio: 3/2;
     object-fit: contain;
+    margin-block:25px;
 }
 
 /*Contact*/
@@ -606,7 +609,6 @@
 
 @media (min-width:900px) {
     .contact-me {
-        font-size: 40px;
         margin-left: 60px;
     }
 
@@ -622,16 +624,13 @@
     .contact-icon {
         height: 100px;
         width: 100px;
-        font-size: 40px;
     }
 
     .email-label {
-        font-size: 30px;
         font-weight: 600;
     }
 
     .email {
-        font-size: 18px;
     }
     .contact-container {
         flex-wrap:wrap;
@@ -640,7 +639,6 @@
 
 @media (max-width:900px) {
     .contact-me {
-        font-size: 25px;
         text-align: center;
     }
 
@@ -654,17 +652,14 @@
 
     .contact-icon {
         height: 60px;
-        font-size: 25px;
-        width: 70px;
+        width: 60px;
     }
 
     .email-label {
-        font-size: 22px;
         font-weight: 600;
     }
 
     .email {
-        font-size: 12px;
     }
     .contact-container {
 
@@ -738,13 +733,11 @@
 
 @media(max-width:900px) {
     .footer-text {
-        font-size: 15px;
     }
 }
 
 @media(min-width:900px) {
     .footer-text {
-        font-size: 20px;
     }
 }
 
@@ -756,5 +749,61 @@
 
 .footer-link {
     color: white;
-    font-size: 25px;
+}
+
+
+
+
+@media(max-width:600px){
+    .fs-tiny {
+        font-size:10px;
+    }
+    .fs-Xsmall {
+        font-size: 12px;
+    }
+    .fs-small {
+        font-size: 14px;
+    }
+
+    .fs-medium {
+        font-size: 18px;
+    }
+    .fs-big {
+        font-size: 22px;
+    }
+    .fs-Xbig {
+        font-size: 26px;
+    }
+    .fs-huge {
+        font-size: 30px;
+    }
+}
+@media(min-width:600px) {
+    .fs-tiny {
+        font-size: 12px;
+    }
+
+    .fs-Xsmall {
+        font-size: 15px;
+    }
+
+    .fs-small {
+        font-size: 18px;
+    }
+
+    .fs-medium {
+        font-size: 23px;
+    }
+
+    .fs-big {
+        font-size: 30px;
+    }
+
+    .fs-Xbig {
+        font-size: 45px;
+    }
+
+    .fs-huge {
+        font-size: 70px;
+    }
 }

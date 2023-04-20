@@ -5,10 +5,10 @@
 
     <div class="navMenu @navCssClass">
         <div id="halfLeft">
-            <div>Saad.dev </div>
+            <div class="fs-medium">Saad.dev </div>
         </div>
 
-        <div id="halfRight">
+        <div class="fs-medium" id="halfRight">
 
             <a @onclick="(async() => await Activate(NavNames.About))" class="@AboutClass navItem"><div>About </div></a>
             <a @onclick="(async() => await Activate(NavNames.Skills))" class="@SkillsClass navItem"><div>Skills</div></a>
@@ -16,28 +16,31 @@
             <a @onclick="(async() => await Activate(NavNames.Contact))" class="@ContactClass navItem"><div>Contact</div> </a>
         </div>
     </div>
-    <i @onclick="toggleMenu" class="menu-icon @iconClass  fs-6"></i>
+    <i @onclick="toggleMenu" class="fs-medium menu-icon @iconClass  "></i>
         
 
 </nav>
 
+
+
+
 <div id="About">
     <div class="about-row1">
         <div class="image-and-links">
-            <img src="/Pictures/ProfilePicture/me.png" width="250"  class="picture-container" />
+            <img src="/Pictures/ProfilePicture/me.png" width="200"  class="picture-container" />
             <div class="links">
-                <a class="contact-link" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
-                <a class="contact-link" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
+                <a class="contact-link fs-big" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
+                <a class="contact-link fs-big" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
             </div>
         </div>
 
         <div class="about-container">
 
-            <div id="welcomeMessage">
+            <div class="fs-huge" id="welcomeMessage">
                 C# software engineer
             </div>
 
-            <div id="description">
+            <div class="fs-small" id="description">
                 <div>
                     Hi, I'm Saad, I live in Morocco and I create full-stack applications with .Net and C#. I love the process of learning! I also enjoy
                     working out, going for long
@@ -45,8 +48,8 @@
                 </div>
             </div>
             <div class="buttons-about">
-                <a href="SaadBio" target="_blank" class="button-link">Read my bio</a>
-                <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.png" class="button-link">Download my resume</a>
+                <a href="SaadBio" target="_blank" class="button-link fs-small">Read my bio</a>
+                <a download="pictureOfSaad" href="/Pictures/ProfilePicture/me.png" class="button-link fs-small">Download my resume</a>
             </div>
 
 
@@ -62,10 +65,15 @@
             <img class="logo" src="/Pictures/Icons/asp.net.png" />
             <img class="logo" src="/Pictures/Icons/Blazor.png" />
             <img class="logo" src="/Pictures/Icons/sql.png" />
+            <img class="logo" src="/Pictures/Icons/Azure.png" />
+
             <img class="logo" src="/Pictures/Icons/git.png" />
+
             <img class="logo" src="/Pictures/Icons/css.png" />
             <img class="logo" src="/Pictures/Icons/html5.png" />
             <img class="logo" src="/Pictures/Icons/javascript.png" />
+            <img class="logo" src="/Pictures/Icons/Bootstrap_logo.svg.png" />
+
             <img class="logo" src="/Pictures/Icons/unity.png" />
 
         </div>
@@ -75,13 +83,13 @@
 
 
 </div>
-<div id="Skills" class="section-container">
-    <div class="section-title">SKILLS</div>
+<div id="Skills" class="section-container ">
+    <div class="section-title fs-medium ">SKILLS</div>
     <div class="container-2 ">
 
         <div class="skills-description-container">
-            <div class="skills-description-title">Full Stack development</div>
-            <div class="skills-container">
+            <div class="skills-description-title fs-Xbig">Full Stack development</div>
+            <div class="skills-container fs-small">
                 <div class="skill"><div>C#</div></div>
                 <div class="skill"><div>.NET Core</div></div>
                 <div class="skill"><div>Asp.net Core</div></div>
@@ -96,7 +104,7 @@
                 <div class="skill"><div>javascript</div></div>
                 <div class="skill"><div>Bootsrap</div></div>
             </div>
-            <div class="skills-description">
+            <div class="skills-description fs-small">
                 I'm proficient in <b>C#</b> and
                 <b>.NET Core</b>, including <b>windows forms</b>, <b>Asp.net Core</b>,
                 and <b>Blazor</b>.
@@ -116,8 +124,8 @@
         </div>
         <div class="skills-description-container">
 
-            <div class="skills-description-title">Game development</div>
-            <div class="skills-container">
+            <div class="skills-description-title fs-Xbig">Game development</div>
+            <div class="skills-container fs-small">
                 <div class="skill"><div>C#</div></div>
                 <div class="skill"><div>Unity</div></div>
                 <div class="skill"><div>Blender</div></div>
@@ -126,7 +134,7 @@
                 <div class="skill"><div>Audacity</div></div>
 
             </div>
-            <div class="skills-description">
+            <div class="skills-description fs-small">
                 I've spent 2+ years creating
                 games in <b>Unity</b>, and I developed skills
                 in writing clean code and building
@@ -145,16 +153,47 @@
 
 </div>
 <div id="Projects" class="section-container">
-    <div class="section-title">PROJECTS</div>
+    <div class="section-title fs-medium">PROJECTS</div>
 
     <div class="projects-container">
         <div class="project-container">
-            <div class="project-picture-container">
-                <img src="/Pictures/Projects/TournamentTracker/TournamentTrackerApplication.png" class="project-picture" />
+
+
+
+            <div  class="project-picture-container"> 
+
+
+                <div class="carousel carousel-dark slide" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                    @foreach(var image in images)
+                    {
+                        <div class="carousel-item @image.isActive">
+                            <img src="@image.imageSource" class="project-picture" />
+                        </div>
+                    }
+                    </div>
+
+                    <a class="carousel-control-prev" @onclick="NextPicture" role="button">
+                        <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" @onclick="PrevPicture" role="button">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+
+
+
+                
             </div>
             <div class="project-text-container">
-                <div class="project-title">Tournament tracker application</div>
-                <div class="project-description">
+                <div class="project-title fs-big">Tournament tracker application</div>
+                <div class="project-description fs-small">
                     A <b>C#</b> and <b>Windows Forms</b> application that automates the creation of tournaments.
                     It generates matchups and rounds based on the number of participating teams and
                     has an <b>email</b> notification system to inform participants of important tournament events.
@@ -165,35 +204,37 @@
                     <img class="logo" src="/Pictures/Icons/dotnet.png" />
                     <img class="logo" src="/Pictures/Icons/sql.png" />
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/SaadAblat/TournamentTracker" target="_blank" class="project-repository link"><i class="fab fa-github"></i> Project code </a>
-                    <div class="project-link link"><i class="fa-solid fa-download "></i> Download project</div>
+                <div class="project-links  fs-medium">
+                    <a href="https://github.com/SaadAblat/TournamentTracker" target="_blank" class="project-repository  link"><i class="fab fa-github"></i> <span >Project code</span></a>
+                    
                 </div>
             </div>
         </div>
         <div class="project-container column-reverse">
             <div class="project-text-container project-text-container-small">
-                <div class="project-title">Workout tracker website</div>
-                <div class="project-description">
+                <div class="project-title fs-big">Workout tracker website</div>
+                <div class="project-description fs-small">
                     This is a <b>full-stack</b> workout tracker web app that allows users to create an account,
                     and add details about their workouts. Users can track their progress with charts
                     and tables and connect with friends to stay motivated.
-                    I created this project using <b>blazor server</b> with
-                    <b>entity framework core</b> and <b>sql database</b>, I also used <b>Asp.net core identity</b>
-                    for users management.
-
+                    I created this project using <b>blazor server</b> along with
+                    <b>entity framework core</b> and <b>sql database</b>, <b>Asp.net core identity</b>
+                    for users management and azure services for deployement.
                 </div>
                 <div class="logos">
-                    <img class="logo" src="/Pictures/Icons/cs.png" />
-                    <img class="logo" src="/Pictures/Icons/dotnet.png" />
-                    <img class="logo" src="/Pictures/Icons/sql.png" />
                     <img class="logo" src="/Pictures/Icons/Blazor.png" />
-                    <img class="logo" src="/Pictures/Icons/Bootstrap_logo.svg.png" />
+
+                    <img class="logo" src="/Pictures/Icons/sql.png" />
+                    <img class="logo" src="/Pictures/Icons/Azure.png" />
+
+                    <img class="logo" src="/Pictures/Icons/css.png" />
+                    <img class="logo" src="/Pictures/Icons/html5.png" />
+                    <img class="logo" src="/Pictures/Icons/javascript.png" />
 
                 </div>
-                <div class="project-links">
-                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="project-repository link"><i class="fab fa-github"></i> Project code </a>
-                    <div class="project-link link"><i class="fa-solid fa-download "></i> Download project</div>
+                <div class="project-links fs-medium">
+                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="link"><i class="fab fa-github"></i> Project code</a>
+                    <a href="http://workouttrackerapp.azurewebsites.net/" target="_blank" class="link"><i class="oi oi-external-link "></i> Open website</a>
                 </div>
             </div>
             <div class="project-picture-container wide-picture">
@@ -206,28 +247,28 @@
 
 </div>
 <div id="Contact" class="section-container">
-    <div class="section-title">CONTACT</div>
-    <div class="contact-me">Contact me  👇 : </div>
+    <div class="section-title fs-medium">CONTACT</div>
+    <div class="contact-me fs-big">Contact me  👇 : </div>
     <div class="contacts">
         <div class="contact-container">
-            <a href="mailto:saad.ablat@gmail.com" class="contact-icon"><i class="fa-solid fa-envelope-open-text"></i></a>
-            <div class="contact-text-container">
-                <div class="email-label">Email</div>
-                <a href="mailto:saad.ablat@gmail.com" class="email">saad.ablat@gmail.com</a>
+            <a href="mailto:saad.ablat@gmail.com" class="contact-icon fs-big"><i class="fa-solid fa-envelope-open-text"></i></a>
+            <div class="contact-text-container ">
+                <div class="email-label fs-medium">Email</div>
+                <a href="mailto:saad.ablat@gmail.com" class="email fs-tiny">saad.ablat@gmail.com</a>
             </div>
         </div>
         <div class="contact-container">
-            <a href="" class="contact-icon"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank" class="contact-icon fs-big"><i class="fab fa-linkedin"></i></a>
             <div class="contact-text-container">
-                <div class="email-label">Linkedin</div>
-                <a href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank" class="email">linkedin.com/in/saad-ablat-82237816b</a>
+                <div  class="email-label fs-medium">Linkedin</div>
+                <a href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank" class="email fs-tiny">linkedin.com/in/saad-ablat-82237816b</a>
             </div>
         </div>
         <div class="contact-container">
-            <a href="" class="contact-icon"><i class="fab fa-github"></i></a>
+            <a href="https://github.com/SaadAblat" target="_blank" class="contact-icon fs-big"><i class="fab fa-github"></i></a>
             <div class="contact-text-container">
-                <div class="email-label">Github</div>
-                <a href="https://github.com/SaadAblat" target="_blank" class="email">github.com/SaadAblat</a>
+                <div class="email-label fs-medium">Github</div>
+                <a href="https://github.com/SaadAblat" target="_blank" class="email fs-tiny">github.com/SaadAblat</a>
             </div>
         </div>
 
@@ -238,9 +279,9 @@
 <div class="footer">
     <div class="footer-row">
 
-        <p class="footer-text">Copyright © 2023. All rights are reserved</p>
+        <div class="footer-text fs-small">Copyright © 2023. All rights are reserved</div>
 
-        <div class="footer-links">
+        <div class="footer-links fs-small">
             <a class="footer-link" href="https://github.com/SaadAblat" target="_blank"><i class="fab fa-github"></i>  </a>
             <a class="footer-link" href="https://www.linkedin.com/in/saad-ablat-82237816b/" target="_blank"><i class="fab fa-linkedin"></i>  </a>
         </div>
@@ -352,9 +393,89 @@
 
     string iconClass = "oi oi-menu";
 
-    void navigateToBio()
+
+
+
+    //Sliding between images
+    class Image
     {
-        NavigationManager.NavigateTo("/SaadBio", true);
+        public string imageSource { get; set; } = "";
+        public string isActive { get; set; } = "";
+    }
+    IList<Image> images = new List<Image>
+    {
+        new Image
+        {
+            imageSource="/Pictures/Projects/TournamentTracker/TournamentTrackerApplication.png",
+            isActive = "active"
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/TournamentTracker/CreateTeam.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/TournamentTracker/CreateTournament.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/TournamentTracker/Tournament viewer.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/TournamentTracker/CreatePrize.png",
+            isActive = ""
+        }
+    };
+    void NextPicture()
+    {
+        int currentImage = 0;
+        int nextImage = 0;
+        for (int i = 0; i < images.Count; i++)
+        {
+            if (images[i].isActive == "active")
+            {
+                currentImage = i;
+                if (currentImage == images.Count-1)
+                {
+                    nextImage = 0;
+                }
+                else
+                {
+                    nextImage = currentImage + 1;
+                }
+            }
+        }
+        images[currentImage].isActive = "";
+        images[nextImage].isActive = "active";
+
+    }
+    void PrevPicture()
+    {
+        int currentImage = 0;
+        int prevImage = 0;
+        for (int i = 0; i < images.Count; i++)
+        {
+            if (images[i].isActive == "active")
+            {
+
+                currentImage = i;
+                if (currentImage == 0)
+                {
+                    prevImage = images.Count-1;
+                }
+                else
+                {
+                    prevImage = currentImage - 1;
+
+                }
+            }
+        }
+        images[currentImage].isActive = "";
+        images[prevImage].isActive = "active";
     }
 
 
