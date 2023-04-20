@@ -156,6 +156,57 @@
     <div class="section-title fs-medium">PROJECTS</div>
 
     <div class="projects-container">
+        <div class="project-container column-reverse">
+            <div class="project-text-container project-text-container-small">
+                <div class="project-title fs-big">Workout tracker website</div>
+                <div class="project-description fs-small">
+                    This is a <b>full-stack</b> workout tracker web app that allows users to create an account,
+                    and add details about their workouts. Users can track their progress with charts
+                    and tables and connect with friends to stay motivated.
+                    I created this project using <b>blazor server</b> along with
+                    <b>entity framework core</b> and <b>sql database</b>, <b>Asp.net core identity</b>
+                    for users management and azure services for deployement.
+                </div>
+                <div class="logos">
+                    <img class="logo" src="/Pictures/Icons/Blazor.png" />
+                    <img class="logo" src="/Pictures/Icons/sql.png" />
+                    <img class="logo" src="/Pictures/Icons/azure.png" />
+                    <img class="logo" src="/Pictures/Icons/css.png" />
+                    <img class="logo" src="/Pictures/Icons/html5.png" />
+                    <img class="logo" src="/Pictures/Icons/javascript.png" />
+
+                </div>
+                <div class="project-links fs-medium">
+                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="link"><i class="fab fa-github"></i> Project code</a>
+                    <a href="http://workouttrackerapp.azurewebsites.net/" target="_blank" class="link"><i class="oi oi-external-link "></i> Open website</a>
+                </div>
+            </div>
+            <div id="carousel-workouts" class="project-picture-container ">
+                <div class="carousel carousel-dark slide" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                        @foreach (var image in workoutImages)
+                        {
+                            <div class="carousel-item @image.isActive">
+                                <img src="@image.imageSource" class="project-picture text-center" />
+                            </div>
+                        }
+                    </div>
+
+                    <a class="carousel-control-prev" @onclick=" (() => NextPicture(workoutImages))" role="button">
+                        <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" @onclick="(()=>PrevPicture(workoutImages))" role="button">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
         <div class="project-container">
 
 
@@ -163,10 +214,10 @@
             <div  class="project-picture-container"> 
 
 
-                <div class="carousel carousel-dark slide" data-ride="carousel">
+                <div id="carousel-torunaments" class="carousel carousel-dark slide" data-ride="carousel">
                     <div class="carousel-inner">
 
-                    @foreach(var image in images)
+                    @foreach(var image in tournamentImages)
                     {
                         <div class="carousel-item @image.isActive">
                             <img src="@image.imageSource" class="project-picture" />
@@ -174,12 +225,12 @@
                     }
                     </div>
 
-                    <a class="carousel-control-prev" @onclick="NextPicture" role="button">
+                    <a class="carousel-control-prev" @onclick=" (() => NextPicture(tournamentImages))" role="button">
                         <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
 
-                    <a class="carousel-control-next" @onclick="PrevPicture" role="button">
+                    <a class="carousel-control-next" @onclick=" (() => PrevPicture(tournamentImages))" role="button">
                         <span class="carousel-control-next-icon " aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
@@ -210,37 +261,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-container column-reverse">
-            <div class="project-text-container project-text-container-small">
-                <div class="project-title fs-big">Workout tracker website</div>
-                <div class="project-description fs-small">
-                    This is a <b>full-stack</b> workout tracker web app that allows users to create an account,
-                    and add details about their workouts. Users can track their progress with charts
-                    and tables and connect with friends to stay motivated.
-                    I created this project using <b>blazor server</b> along with
-                    <b>entity framework core</b> and <b>sql database</b>, <b>Asp.net core identity</b>
-                    for users management and azure services for deployement.
-                </div>
-                <div class="logos">
-                    <img class="logo" src="/Pictures/Icons/Blazor.png" />
-
-                    <img class="logo" src="/Pictures/Icons/sql.png" />
-                    <img class="logo" src="/Pictures/Icons/azure.png" />
-
-                    <img class="logo" src="/Pictures/Icons/css.png" />
-                    <img class="logo" src="/Pictures/Icons/html5.png" />
-                    <img class="logo" src="/Pictures/Icons/javascript.png" />
-
-                </div>
-                <div class="project-links fs-medium">
-                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="link"><i class="fab fa-github"></i> Project code</a>
-                    <a href="http://workouttrackerapp.azurewebsites.net/" target="_blank" class="link"><i class="oi oi-external-link "></i> Open website</a>
-                </div>
-            </div>
-            <div class="project-picture-container wide-picture">
-                <img src="/Pictures/Projects/WorkoutTracker/Home Page.png" class="project-picture" />
-            </div>
-        </div>
+        
 
     </div>
 
@@ -402,7 +423,7 @@
         public string imageSource { get; set; } = "";
         public string isActive { get; set; } = "";
     }
-    IList<Image> images = new List<Image>
+    IList<Image> tournamentImages = new List<Image>
     {
         new Image
         {
@@ -430,16 +451,65 @@
             isActive = ""
         }
     };
-    void NextPicture()
+    IList<Image> workoutImages = new List<Image>
+    {
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/ExercisesDesktop.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/workoutsDesktop.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/HomePageDesktop.png",
+            isActive = ""
+
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/Home Page.png",
+            isActive = "active"
+
+        },
+        
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/addfriends.png",
+            isActive = ""
+        },
+        
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/addworkout.png",
+            isActive = ""
+        },
+        
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/LinechartDesktop.png",
+            isActive = ""
+        },
+        new Image
+        {
+            imageSource="/Pictures/Projects/WorkoutTracker/log.png",
+            isActive = ""
+        }
+        
+    };
+    void NextPicture(IList<Image> imagesList)
     {
         int currentImage = 0;
         int nextImage = 0;
-        for (int i = 0; i < images.Count; i++)
+        for (int i = 0; i < imagesList.Count; i++)
         {
-            if (images[i].isActive == "active")
+            if (imagesList[i].isActive == "active")
             {
                 currentImage = i;
-                if (currentImage == images.Count-1)
+                if (currentImage == imagesList.Count - 1)
                 {
                     nextImage = 0;
                 }
@@ -449,23 +519,23 @@
                 }
             }
         }
-        images[currentImage].isActive = "";
-        images[nextImage].isActive = "active";
+        imagesList[currentImage].isActive = "";
+        imagesList[nextImage].isActive = "active";
 
     }
-    void PrevPicture()
+    void PrevPicture(IList<Image> imagesList)
     {
         int currentImage = 0;
         int prevImage = 0;
-        for (int i = 0; i < images.Count; i++)
+        for (int i = 0; i < imagesList.Count; i++)
         {
-            if (images[i].isActive == "active")
+            if (imagesList[i].isActive == "active")
             {
 
                 currentImage = i;
                 if (currentImage == 0)
                 {
-                    prevImage = images.Count-1;
+                    prevImage = imagesList.Count - 1;
                 }
                 else
                 {
@@ -474,8 +544,8 @@
                 }
             }
         }
-        images[currentImage].isActive = "";
-        images[prevImage].isActive = "active";
+        imagesList[currentImage].isActive = "";
+        imagesList[prevImage].isActive = "active";
     }
 
 
