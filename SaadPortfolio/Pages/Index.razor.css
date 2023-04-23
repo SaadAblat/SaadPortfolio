@@ -807,3 +807,17 @@
         font-size: 70px;
     }
 }
+
+@media(min-width:1366px){
+    .game-iframe {
+        width: 1366px;
+        height: 760px;
+    }
+}
+@media(max-width:1366px){
+    .game-iframe {
+        width: 100vw;
+        height:760px;
+
+    }
+}
