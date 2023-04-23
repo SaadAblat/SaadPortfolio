@@ -174,7 +174,6 @@
                     <img class="logo" src="/Pictures/Icons/css.png" />
                     <img class="logo" src="/Pictures/Icons/html5.png" />
                     <img class="logo" src="/Pictures/Icons/javascript.png" />
-
                 </div>
                 <div class="project-links ">
                     <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="link"><span class="fs-medium">Code </span>  <i class="fab fa-github fs-big"></i></a>
@@ -209,10 +208,56 @@
         </div>
 
         <div class="project-container">
-            <iframe class="game-iframe" src="/Files/ZorGame/index.html" frameborder="0" allowfullscreen></iframe>
+            <div class="project-text-container project-text-container-small">
+                <div class="project-title fs-big">2d game platformer prototype</div>
+                <div class="project-description fs-small">
+                    This is a <b>2D shooting game prototype</b> I
+                    created with <b>Unity</b> and <b>C#</b>.
+                    This game features a variety of dynamic and 
+                    <b>interesting features</b> such as jumping and shooting capabilities, 
+                    a diverse selection of weapons, weapon-specific ammunition collection, 
+                    and coin gathering for in-game rewards. In addition, players can enjoy the 
+                    convenience of checkpoints to track their progress, discover treasure chests, 
+                    and confront a variety of challenging enemies.
+                </div>
+                <div class="logos">
+                    <img class="logo" src="/Pictures/Icons/unity.png" />
+                    <img class="logo" src="/Pictures/Icons/cs.png" />
+
+                </div>
+                <div class="project-links ">
+                    <a href="https://github.com/SaadAblat/WorkoutTrackerApp" target="_blank" class="link"><span class="fs-medium">Code </span>  <i class="fab fa-github fs-big"></i></a>
+                    <a href="ZorGame" target="_blank" class="link"><span class="fs-medium">Play game (Works on Desktop) </span><i class="oi oi-external-link "></i> </a>
+                </div>
+            </div>
+            <div id="carousel-zorgame" class="project-picture-container ">
+                <div class="carousel carousel-dark slide" data-ride="carousel">
+                    <div class="carousel-inner">
+
+                        @foreach (var image in zorGameImages)
+                        {
+                            <div class="carousel-item @image.isActive">
+                                <img src="@image.imageSource" class="project-picture text-center" />
+                            </div>
+                        }
+                    </div>
+
+                    <a class="carousel-control-prev" @onclick=" (() => NextPicture(zorGameImages))" role="button">
+                        <span class="carousel-control-prev-icon text-black" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" @onclick="(()=>PrevPicture(zorGameImages))" role="button">
+                        <span class="carousel-control-next-icon " aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+
+                </div>
+
+            </div>
         </div>
 
-        <div class="project-container">
+        <div class="project-container  column-reverse">
 
 
 
@@ -266,6 +311,8 @@
                 </div>
             </div>
         </div>
+
+
 
 
         
@@ -506,6 +553,20 @@
             isActive = ""
         }
         
+    };
+    IList<Image> zorGameImages = new List<Image>
+    {
+        new Image
+        {
+            imageSource="/Pictures/Games/ZorGame/bridge.png",
+            isActive = "active"
+        },
+         new Image
+        {
+            imageSource="/Pictures/Games/ZorGame/cowboy.png",
+            isActive = ""
+        },
+
     };
     void NextPicture(IList<Image> imagesList)
     {
